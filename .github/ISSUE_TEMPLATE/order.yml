@@ -1,0 +1,50 @@
+name: "📊 ポートフォリオ分析を注文する"
+description: "USDCを送金後、このフォームで注文してください"
+title: "Portfolio Analysis Order: [あなたのウォレットアドレス]"
+labels: ["order", "pending"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 📋 注文フォーム
+        
+        **送金先アドレス（Avalanche C-ChainのUSDCのみ）:**
+        `0x27A70dc0656bEf760242d5F923Be51E638C93B20`
+        
+        **料金:**
+        - スタンダード: **6.3 USDC**
+        - プレミアム: **63 USDC**
+        - 初回限定: **3.15 USDC**
+        
+  - type: input
+    id: wallet
+    attributes:
+      label: "分析対象のウォレットアドレス"
+      description: "あなたの公開ウォレットアドレス"
+      placeholder: "0x..."
+    validations:
+      required: true
+  - type: input
+    id: txhash
+    attributes:
+      label: "送金トランザクションハッシュ"
+      description: "USDC送金後のTX ID"
+      placeholder: "0x..."
+    validations:
+      required: true
+  - type: dropdown
+    id: plan
+    attributes:
+      label: "プラン"
+      options:
+        - "スタンダード (6.3 USDC)"
+        - "プレミアム (63 USDC)"
+        - "初回限定 (3.15 USDC)"
+    validations:
+      required: true
+  - type: input
+    id: email
+    attributes:
+      label: "メールアドレス（任意）"
+      description: "レポート送付先"
+      placeholder: "you@example.com"
